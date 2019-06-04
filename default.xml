@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remote  name="aosp"
-           fetch=".."
-           review="https://android-review.googlesource.com/" />
+  <remote fetch="https://android.googlesource.com/" name="aosp" review="https://android-review.googlesource.com/"/>
+  <remote fetch="https://gitlab.com/baylibre/amlogic/atv/" name="gitlab"/>
+  <remote fetch="https://kernel.googlesource.com/pub/scm/linux/kernel/git/firmware/" name="linux-firmware"/>
   <default revision="master"
            remote="aosp"
            sync-j="4" />
@@ -762,5 +762,19 @@
   <project path="tools/trebuchet" name="platform/tools/trebuchet" groups="tools,cts,pdk-cw-fs,pdk-fs" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+
+
+  <remove-project name="device/amlogic/yukawa" />
+  <remove-project name="device/amlogic/yukawa-kernel" />
+  <remove-project name="platform/external/drm_hwcomposer" />
+
+  ...
+
+  <project groups="device,yukawa,pdk" path="device/amlogic/yukawa" name="aosp/device/amlogic/yukawa" revision="amlogic/master" remote="gitlab" sync-s="true"/>
+  <project clone-depth="2" groups="device,yukawa,pdk" path="device/amlogic/yukawa-kernel" name="aosp/device/amlogic/yukawa-kernel" revision="android-4.19-g12a-prebuilt" remote="gitlab"/>
+  <project groups="drm_hwcomposer,pdk-fs" path="external/drm_hwcomposer" name="aosp/external/drm_hwcomposer" revision="for-meson" remote="gitlab"/>
+  <project clone-depth="1" groups="vts,pdk" name="linux" path="kernel/common" revision="narmstrong/v5.2/android-4.19" remote="gitlab"/>
+  <project clone-depth="1" groups="vts,pdk" name="linux-firmware.git" path="kernel/linux-firmware" revision="master" remote="linux-firmware"/>
+  <project groups="vts,pdk" name="meson_g12a_mali_bifrost" path="kernel/meson_g12a_mali_bifrost" revision="BX301A01B-SW-99002-r16p0-01rel0_meson-g12a" remote="gitlab"/>
 
 </manifest>

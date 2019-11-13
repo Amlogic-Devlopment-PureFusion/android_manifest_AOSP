@@ -8,7 +8,7 @@
   <manifest-server url="http://android-smartsync.corp.google.com/android.googlesource.com/manifestserver"/>
 
   <project groups="device,yukawa,pdk" name="aosp/device/amlogic/yukawa" path="device/amlogic/yukawa" remote="gitlab" revision="amlogic/master"/>
-  <project clone-depth="2" groups="device,yukawa,pdk" name="aosp/device/amlogic/yukawa-kernel" path="device/amlogic/yukawa-kernel" remote="gitlab" revision="master"/>
+  <project clone-depth="2" groups="device,yukawa,pdk" name="aosp/device/amlogic/yukawa-kernel" path="device/amlogic/yukawa-kernel" remote="gitlab" revision="master_android10bootflow"/>
   <project groups="pdk-cw-fs,pdk" name="device/common" revision="401b47878c8af0a69ca423a063b1ddcfc4bd8e45" upstream="master"/>
   <project groups="pdk" name="device/generic/arm64" revision="b2aea8576e3928e9add8b616740e56c1c5a811d2" upstream="master"/>
   <project groups="pdk" name="device/generic/armv7-a-neon" revision="de1b4be0c4715a22837129f65cdabd6c8f5b8d7e" upstream="master"/>

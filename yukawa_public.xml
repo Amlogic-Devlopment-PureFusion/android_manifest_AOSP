@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <include name="aosp.xml" />
+
+    <remote  name="android-tv" fetch="https://gitlab.com/baylibre/amlogic/atv/" />
+
+    <!-- public aosp forks -->
+    <!-- yukawa: add fix for sd card issue on SystemUI -->
+    <remove-project name="device/amlogic/yukawa" />
+    <project path="device/amlogic/yukawa" name="aosp/device/amlogic/yukawa" remote="android-tv" revision="android12-sd-fix" groups="yukawa" />
+    <!-- yukawa-kernel: add fix for bluetooth enablement issue -->
+    <remove-project name="device/amlogic/yukawa-kernel" />
+    <project path="device/amlogic/yukawa-kernel" name="aosp/device/amlogic/yukawa-kernel" remote="android-tv" revision="android12-bt-fix" groups="yukawa" />
+</manifest>
